@@ -20,3 +20,14 @@
 
 ![](images/created1.png)
 
+#### 1. Para conectarnos a la maquina virtual utilizamos el protocolo ssh, y el sisguiente comando
+
+![](images/conection.png)
+
+#### 2. Proceso de instalación 
+
+![](images/nodeInstall.png)
+
+![](images/nodeInstall2.png)
+
+#### 3. 
