@@ -9,6 +9,7 @@ app.get('/fibonacci/:nthIn', function (req, res) {
   var nth = FibonacciService.getNthNumberInSequence(parseInt(req.params.nthIn))
   console.timeEnd('fibonacci');
   res.send('The answer is ' + nth);
+  console.log("HELLO");
 });
 
 app.get('/', function (req, res) {  
