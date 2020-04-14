@@ -4,11 +4,10 @@ var FibonacciService = require('./Services/FibonacciService')
 var app = express();
 
 app.get('/fibonacci/:nthIn', function (req, res) {
-  var d = new Date();
-  var n = d.getTime();
+  
+  console.time('fibonacci')
   var nth = FibonacciService.getNthNumberInSequence(parseInt(req.params.nthIn))
-  var m = d.getTime();
-  console.log(m-n);
+  console.timeEnd('fibonacci');
   res.send('The answer is ' + nth);
 });
 
