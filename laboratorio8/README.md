@@ -30,4 +30,13 @@
 
 ![](images/nodeInstall2.png)
 
-#### 3. 
+#### 3. creamos un repositorio en git y lo clonamos dentro de la VM y luego ejecutamos npm install
+
+![](images/fibonacciApp.png)
+
+#### 4. instalamos forever y ejecutamos la aplicacion 
+
+![](images/foreverInstall.png)
+
+![](images/.png)
+#### 
