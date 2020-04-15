@@ -49,18 +49,22 @@
 
 
 
-#### 7. La función que calcula en enésimo número de la secuencia de Fibonacci está muy mal construido y consume bastante CPU para obtener la respuesta. Usando la consola del Browser documente los tiempos de respuesta para dicho endpoint usando los siguintes valores:
+#### 7. La función que calcula en enésimo número de la secuencia de Fibonacci está muy mal construido y consume bastante CPU para obtener la respuesta. Usando la consola del Browser documente los tiempos de respuesta para dicho endpoint usando los siguintes valores: 
 
-    * 1000000 : 2.2 
-    * 1010000 : 2.2
-    * 1020000 : 2.3
-    * 1030000 : 2.3
-    * 1040000 : 2.4
-    * 1050000 : 2.4
-    * 1060000 : 2.5
-    * 1070000 : 2.5
-    * 1080000 : 2.5
-    * 1090000 : 2.6
+
+| Numero  | tiempo(mins) |
+|---------|-------------:|
+| 1000000 | 2.2          |
+| 1010000 | 2.2          |
+| 1020000 | 2.3          |
+| 1030000 | 2.3          |
+| 1040000 | 2.4          |
+| 1050000 | 2.4          |
+| 1060000 | 2.5          |
+| 1070000 | 2.5          |
+| 1080000 | 2.5          |
+| 1090000 | 2.6          |
+
 
 #### 8. Dírijase ahora a Azure y verifique el consumo de CPU para la VM. (Los resultados pueden tardar 5 minutos en aparecer). 
 
@@ -68,15 +72,43 @@
 
 #### 9. Ahora usaremos Postman para simular una carga concurrente a nuestro sistema. Siga estos pasos.
 
-![](images/cpu1.png)
-
 ![](images/vm1.png)
 
-![](images/runPostman.png)
+![](images/postman.png)
 
-![](images/graphPostman.png)
+![](images/graphPostman1.png)
 
-#### 10. La cantidad de CPU consumida es bastante grande y un conjunto considerable de peticiones concurrentes pueden hacer fallar nuestro servicio. Para solucionarlo usaremos una estrategia de Escalamiento Vertical. En Azure diríjase a la sección *size* y a continuación seleccione el tamaño `B2ms`.
+#### 10. La cantidad de CPU consumida es bastante grande y un conjunto considerable de peticiones concurrentes pueden hacer fallar nuestro servicio. Para solucionarlo usaremos una estrategia de Escalamiento Vertical. En Azure diríjase a la sección *size* y a continuación seleccione el tamaño `B2ms`.  No me fue posible cambiar al tamaño B2ms debido a la localización inicialmente utilizada para crear la VM, por lo cual utilice D2s_V3 ya que es muy similirar en recursos; comparten CPUs, RAM, dataDisks.
+
+
+![](images/sizeMachine.png)
+
+11. Una vez el cambio se vea reflejado, repita el paso 7, 8 y 9.
+
+##### 7.
+
+| Numero  | tiempo(seg)    |
+|---------|---------------:|
+| 1000000 | 23.36          |
+| 1010000 | 24.34          |
+| 1020000 | 24.82          |
+| 1030000 | 24.57          |
+| 1040000 | 25.77          |
+| 1050000 | 25.23          |
+| 1060000 | 26.87          |
+| 1070000 | 33.56          |
+| 1080000 | 27.34          |
+| 1090000 | 27.02          |
+
+##### 8.  
+
+![](images/cpu2.png)
+
+##### 9.  
+
+![](images/postman2.png)
+
+![](images/graphPostman2.png)
 
 #### 1. ¿Cuántos y cuáles recursos crea Azure junto con la VM?
     
@@ -132,19 +164,74 @@
 
 #### 4. Adjunte tabla de tiempos e interprete por qué la función tarda tando tiempo.
 
+    con maquina  Basic A0
+
+| Numero  | tiempo(mins) |
+|---------|-------------:|
+| 1000000 | 2.2          |
+| 1010000 | 2.2          |
+| 1020000 | 2.3          |
+| 1030000 | 2.3          |
+| 1040000 | 2.4          |
+| 1050000 | 2.4          |
+| 1060000 | 2.5          |
+| 1070000 | 2.5          |
+| 1080000 | 2.5          |
+| 1090000 | 2.6          |
+
+    con maquina D2s_V3  
+
+| Numero  | tiempo(seg)    |
+|---------|---------------:|
+| 1000000 | 23.36          |
+| 1010000 | 24.34          |
+| 1020000 | 24.82          |
+| 1030000 | 24.57          |
+| 1040000 | 25.77          |
+| 1050000 | 25.23          |
+| 1060000 | 26.87          |
+| 1070000 | 33.56          |
+| 1080000 | 27.34          |
+| 1090000 | 27.02          | 
+
+
 #### 5. Adjunte imágen del consumo de CPU de la VM e interprete por qué la función consume esa cantidad de CPU.
 
-    ![](images/cpu1.png)
+![](images/cpu1.png)  
     
     Uso de CPU antes de realizar escalamiento vertical.
 
-      
+![](images/cpu2.png)  
+
+    Uso de CPU despues de realizar el escalamiento vertical.
+
+    El consumo de CPU es bastante alto tanto en ambos casos, ya que en el primer caso el uso de cpu super el 75% de uso   
+    y en el segundo caso llega a 50%; pero debemos tener en cuenta que la maquina del segundo caso tiene 2 vCPUs, por lo  
+    cual esta utilizando 1 CPU al máximo. Esto es debido a que la función no utiliza el concepto de paralelismo,  
+    no utiliza los multiples medios de ejecución física con los que cuenta la maquina. además, la función tiene una  
+    complejidad lineal, lo cual implica un gran numero de iteraciones para calcular el resultado.  
+
 
 #### 6. Adjunte la imagen del resumen de la ejecución de Postman. Interprete:
     * Tiempos de ejecución de cada petición.
+    Basic A0   
+
+![](images/postman.png)
+
+    D2s_V3  
+
+![](images/postman2.png)
+
     * Si hubo fallos documentelos y explique.
+
+    Tanto en Basic A0 como en D2s_v3 encontramos fallos a algunas de las peticiones que postman realizaba de forma concurrente  
+    estos fallos nos indican que el  aumento size de la VM no es la solución optima para garantizar las respuestas a  
+    solicitudes concurrentes.
+
 #### 7. ¿Cuál es la diferencia entre los tamaños `B2ms` y `B1ls` (no solo busque especificaciones de infraestructura)?
+
 #### 8. ¿Aumentar el tamaño de la VM es una buena solución en este escenario?, ¿Qué pasa con la FibonacciApp cuando cambiamos el tamaño de la VM?
+    
 #### 9. ¿Qué pasa con la infraestructura cuando cambia el tamaño de la VM? ¿Qué efectos negativos implica?
 #### 10. ¿Hubo mejora en el consumo de CPU o en los tiempos de respuesta? Si/No ¿Por qué?
 #### 11. Aumente la cantidad de ejecuciones paralelas del comando de postman a `4`. ¿El comportamiento del sistema es porcentualmente mejor?
