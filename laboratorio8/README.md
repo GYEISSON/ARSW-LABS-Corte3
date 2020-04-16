@@ -230,11 +230,30 @@
 
 #### 7. ¿Cuál es la diferencia entre los tamaños `B2ms` y `B1ls` (no solo busque especificaciones de infraestructura)?
 
+
 #### 8. ¿Aumentar el tamaño de la VM es una buena solución en este escenario?, ¿Qué pasa con la FibonacciApp cuando cambiamos el tamaño de la VM?
     
+    * Aumentar el tamaño no es una buena solución, ya que la función no utiliza los múltiples procesadores de la maquina,  
+      tampoco permite resolver múltiples en tiempo real; lo que pone en riesgo la disponibilidad de el servicio.  
+
+      * Cuando cambiamos el tamaño de la VM, fibonacciApp disminuye el tiempo requerido para resolver el número,  
+        esto debido a que se cambio a un procesador mas rápido.  
+
 #### 9. ¿Qué pasa con la infraestructura cuando cambia el tamaño de la VM? ¿Qué efectos negativos implica?
-#### 10. ¿Hubo mejora en el consumo de CPU o en los tiempos de respuesta? Si/No ¿Por qué?
+    
+    * 
+
+#### 10. ¿Hubo mejora en el consumo de CPU o en los tiempos de respuesta? Si/No ¿Por qué?  
+
+    * Hubo mejora en el consumo de CPU ya que permanece en 50% esto debido a que la maquina a la cual se aumento  
+    cuenta con 2 vCPUs y la función solo hace uso de una CPU.
+
+    * Hubo mejora en el tiempo de respuesta de la función ya que los vCPUs de la VM a la cual se mejoro trabajan a una velocidad bastante mayor(Intel® Xeon® 8171M 2.1GHz ).
+
+
 #### 11. Aumente la cantidad de ejecuciones paralelas del comando de postman a `4`. ¿El comportamiento del sistema es porcentualmente mejor?
+
+    * El comportamiento del sistema no mejora porcentualmente,  
 
 
 

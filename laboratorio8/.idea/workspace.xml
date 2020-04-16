@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="992b25d1-6777-4ef1-bf98-03b5d42bf180" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/images/cpu2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/graphPostman1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/graphPostman2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/postman.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/postman2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/sizeMachine.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -52,6 +46,7 @@
       <workItem from="1586867601620" duration="5523000" />
       <workItem from="1586906345478" duration="1547000" />
       <workItem from="1586960341404" duration="4181000" />
+      <workItem from="1587072448319" duration="1365000" />
     </task>
     <servers />
   </component>
@@ -62,13 +57,13 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1586960421833">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1587076324634">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1586960421833" />
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1586906348385">
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1587076324634" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1587072448294">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1586906348385" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1587072448294" />
   </component>
 </project>
