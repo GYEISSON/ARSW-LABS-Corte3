@@ -28,7 +28,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ARSW_LOAD-BALANCING_AZURE-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -46,7 +46,10 @@
       <workItem from="1586867601620" duration="5523000" />
       <workItem from="1586906345478" duration="1547000" />
       <workItem from="1586960341404" duration="4181000" />
-      <workItem from="1587072448319" duration="1365000" />
+      <workItem from="1587072448319" duration="1367000" />
+      <workItem from="1587130758205" duration="11104000" />
+      <workItem from="1587424312715" duration="7256000" />
+      <workItem from="1587526244297" duration="685000" />
     </task>
     <servers />
   </component>
@@ -57,13 +60,13 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1587076324634">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1587131075616">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1587076324634" />
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1587072448294">
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1587131075616" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1587130757848">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1587072448294" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1587130757848" />
   </component>
 </project>
